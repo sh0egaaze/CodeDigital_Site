@@ -1,149 +1,128 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ShoppingCart, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Menu, ShoppingCart } from "lucide-react";
 import { useCartStore } from "@/lib/cartStore";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const { items } = useCartStore();
-  
-  const cartItemCount = items.length;
+  const { totalItems } = useCartStore();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: "Главная", path: "/" },
-    { name: "Услуги", path: "/services" },
-    { name: "Портфолио", path: "/portfolio" },
-    { name: "О нас", path: "/about" },
+    { href: "/", label: "Главная" },
+    { href: "/services", label: "Услуги" },
+    { href: "/portfolio", label: "Портфолио" },
+    { href: "/about", label: "О нас" },
   ];
-
-  const isActive = (path: string) => {
-    return location.pathname === path;
-  };
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? "py-3 glass-card"
-          : "py-6 bg-transparent"
+          ? "bg-background/80 backdrop-blur-md border-b shadow-sm"
+          : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between">
-          <Link 
-            to="/" 
-            className="text-2xl font-bold flex items-center transition-all duration-300 hover:opacity-80"
+      <div className="container mx-auto px-4 md:px-6 flex h-16 items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Link
+            to="/"
+            className="flex items-center gap-1 font-bold text-xl"
           >
             <span className="text-gradient">CodeDigital</span>
           </Link>
+        </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`nav-link text-sm font-medium transition-colors ${
-                  isActive(link.path) 
-                    ? "text-primary" 
-                    : "text-foreground/80 hover:text-foreground"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="hidden md:flex items-center space-x-4">
-            <Link to="/cart" className="relative">
-              <Button variant="ghost" size="icon" className="relative">
-                <ShoppingCart className="h-5 w-5" />
-                {cartItemCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-primary text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
-                    {cartItemCount}
-                  </span>
-                )}
-              </Button>
-            </Link>
-            <Button asChild>
-              <Link to="/services">Заказать</Link>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center space-x-4">
-            <Link to="/cart" className="relative">
-              <Button variant="ghost" size="icon" className="relative">
-                <ShoppingCart className="h-5 w-5" />
-                {cartItemCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-primary text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
-                    {cartItemCount}
-                  </span>
-                )}
-              </Button>
-            </Link>
-            <Button 
-              variant="ghost" 
-              size="icon"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        <nav className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              to={link.href}
+              className={`nav-link text-sm font-medium ${
+                location.pathname === link.href ? "active" : ""
+              }`}
             >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="relative"
+          >
+            <Link to="/cart">
+              <ShoppingCart className="h-5 w-5" />
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center">
+                  {totalItems}
+                </span>
               )}
-            </Button>
-          </div>
+            </Link>
+          </Button>
+
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden"
+              >
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right">
+              <nav className="flex flex-col gap-4 mt-8">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className={`text-lg font-medium ${
+                      location.pathname === link.href
+                        ? "text-primary"
+                        : "text-foreground"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <Link
+                  to="/cart"
+                  className="flex items-center gap-2 text-lg font-medium mt-2"
+                >
+                  <ShoppingCart className="h-5 w-5" />
+                  Корзина
+                  {totalItems > 0 && (
+                    <span className="h-5 w-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center">
+                      {totalItems}
+                    </span>
+                  )}
+                </Link>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden animate-fade-in glass-card">
-          <div className="container mx-auto px-4 pt-4 pb-6">
-            <nav className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`text-sm font-medium px-4 py-2 rounded-md transition-colors ${
-                    isActive(link.path)
-                      ? "bg-primary/10 text-primary"
-                      : "hover:bg-secondary"
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <Button asChild className="mt-2">
-                <Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>
-                  Заказать
-                </Link>
-              </Button>
-            </nav>
-          </div>
-        </div>
-      )}
     </header>
   );
 };
