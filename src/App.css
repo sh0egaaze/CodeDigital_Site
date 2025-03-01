@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +40,27 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Dark mode gradient additions */
+body {
+  background: linear-gradient(to bottom right, #1A1F2C, #221F26);
+  color: #fff;
+}
+
+.dark-card {
+  background-color: rgba(34, 34, 34, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.dark-gradient {
+  background: linear-gradient(135deg, #1A1F2C 0%, #221F26 100%);
+}
+
+.dark-glass {
+  background: rgba(34, 34, 34, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }

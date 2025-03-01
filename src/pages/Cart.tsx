@@ -16,7 +16,7 @@ const CartPage = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    telegram: "",
     phone: "",
     comments: "",
   });
@@ -50,7 +50,7 @@ const CartPage = () => {
 🔔 *Новый заказ!*
 
 *Клиент:* ${formData.name}
-*Email:* ${formData.email}
+*Telegram:* ${formData.telegram}
 *Телефон:* ${formData.phone}
 
 *Заказанные услуги:*
@@ -89,7 +89,7 @@ ${orderItems}
       // Reset form after successful submission
       setFormData({
         name: "",
-        email: "",
+        telegram: "",
         phone: "",
         comments: "",
       });
@@ -113,16 +113,16 @@ ${orderItems}
 
   return (
     <div className="container mx-auto py-12 px-4 md:px-6 lg:max-w-6xl">
-      <h1 className="text-4xl font-bold mb-8 text-center">Корзина</h1>
+      <h1 className="text-4xl font-bold mb-8 text-center text-gradient">Корзина</h1>
       
       {items.length === 0 && !isSuccess ? (
-        <div className="text-center py-16">
-          <ShoppingCart className="mx-auto h-16 w-16 text-muted-foreground mb-4" />
+        <div className="text-center py-16 dark-glass rounded-xl p-8">
+          <ShoppingCart className="mx-auto h-16 w-16 text-white/60 mb-4" />
           <h2 className="text-2xl font-medium mb-2">Ваша корзина пуста</h2>
-          <p className="text-muted-foreground mb-6">
+          <p className="text-white/70 mb-6">
             Добавьте услуги в корзину, чтобы оформить заказ
           </p>
-          <Button asChild>
+          <Button asChild className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
             <a href="/services">Просмотреть услуги</a>
           </Button>
         </div>
@@ -136,14 +136,14 @@ ${orderItems}
                 exit={{ opacity: 0 }}
                 className="space-y-4"
               >
-                <h2 className="text-2xl font-semibold mb-4">Ваш заказ</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-white/90">Ваш заказ</h2>
                 <div className="space-y-4 mb-6">
                   {items.map((item) => (
                     <CartItem key={item.id} item={item} />
                   ))}
                 </div>
-                <div className="border-t pt-4">
-                  <div className="flex justify-between text-lg font-medium">
+                <div className="border-t border-white/10 pt-4">
+                  <div className="flex justify-between text-lg font-medium text-white">
                     <span>Всего:</span>
                     <span>{totalPrice.toLocaleString()} ₽</span>
                   </div>
@@ -158,16 +158,16 @@ ${orderItems}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                className="bg-green-50 dark:bg-green-900/10 p-8 rounded-lg border border-green-200 dark:border-green-700 text-center"
+                className="bg-gradient-to-br from-[#1A1F2C]/90 to-[#221F26]/80 p-8 rounded-lg border border-green-500/30 text-center backdrop-blur-sm"
               >
-                <div className="mx-auto w-16 h-16 bg-green-100 dark:bg-green-800/30 rounded-full flex items-center justify-center mb-4">
-                  <Check className="h-8 w-8 text-green-600 dark:text-green-400" />
+                <div className="mx-auto w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
+                  <Check className="h-8 w-8 text-green-400" />
                 </div>
-                <h2 className="text-2xl font-semibold mb-2">Заказ оформлен!</h2>
-                <p className="text-muted-foreground mb-6">
+                <h2 className="text-2xl font-semibold mb-2 text-white">Заказ оформлен!</h2>
+                <p className="text-white/70 mb-6">
                   Спасибо за ваш заказ. Мы свяжемся с вами в ближайшее время для уточнения деталей.
                 </p>
-                <Button asChild variant="outline">
+                <Button asChild variant="outline" className="border-white/20 bg-white/5 hover:bg-white/10 text-white">
                   <a href="/services">Вернуться к услугам</a>
                 </Button>
               </motion.div>
@@ -176,11 +176,12 @@ ${orderItems}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
+                className="dark-glass rounded-xl p-6"
               >
-                <h2 className="text-2xl font-semibold mb-4">Оформление заказа</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-white/90">Оформление заказа</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-1">
+                    <label htmlFor="name" className="block text-sm font-medium mb-1 text-white/80">
                       Ваше имя *
                     </label>
                     <Input
@@ -190,26 +191,27 @@ ${orderItems}
                       onChange={handleChange}
                       required
                       placeholder="Введите ваше имя"
+                      className="bg-white/5 border-white/20 text-white placeholder:text-white/40"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-1">
-                      Email *
+                    <label htmlFor="telegram" className="block text-sm font-medium mb-1 text-white/80">
+                      Telegram *
                     </label>
                     <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
+                      id="telegram"
+                      name="telegram"
+                      value={formData.telegram}
                       onChange={handleChange}
                       required
-                      placeholder="Введите ваш email"
+                      placeholder="@username"
+                      className="bg-white/5 border-white/20 text-white placeholder:text-white/40"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-1">
+                    <label htmlFor="phone" className="block text-sm font-medium mb-1 text-white/80">
                       Телефон *
                     </label>
                     <Input
@@ -219,11 +221,12 @@ ${orderItems}
                       onChange={handleChange}
                       required
                       placeholder="Введите ваш телефон"
+                      className="bg-white/5 border-white/20 text-white placeholder:text-white/40"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="comments" className="block text-sm font-medium mb-1">
+                    <label htmlFor="comments" className="block text-sm font-medium mb-1 text-white/80">
                       Комментарий к заказу
                     </label>
                     <Textarea
@@ -233,12 +236,13 @@ ${orderItems}
                       onChange={handleChange}
                       placeholder="Дополнительная информация или пожелания"
                       rows={4}
+                      className="bg-white/5 border-white/20 text-white placeholder:text-white/40"
                     />
                   </div>
                   
                   <Button
                     type="submit"
-                    className="w-full"
+                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
                     disabled={isSubmitting || !items.length}
                   >
                     {isSubmitting ? "Отправка..." : "Оформить заказ"}
