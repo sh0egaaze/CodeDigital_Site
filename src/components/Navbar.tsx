@@ -45,6 +45,7 @@ const Navbar = () => {
             to="/"
             className="flex items-center gap-1 font-bold text-xl"
           >
+            <img src="/logo.png" alt="CodeDigital Logo" className="h-8 w-auto" />
             <span className="text-gradient">CodeDigital</span>
           </Link>
         </div>

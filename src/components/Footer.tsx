@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Github, Instagram, Linkedin, Send, Phone } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
@@ -11,7 +10,8 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link to="/" className="inline-block mb-4">
+            <Link to="/" className="inline-block mb-4 flex items-center gap-2">
+              <img src="/logo.png" alt="CodeDigital Logo" className="h-8 w-auto" />
               <h3 className="text-xl font-bold text-gradient">CodeDigital</h3>
             </Link>
             <p className="text-white/70 mb-4 max-w-xs">
