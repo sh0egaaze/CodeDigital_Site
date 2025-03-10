@@ -41,7 +41,7 @@ const PortfolioItem = ({ project, index }: PortfolioItemProps) => {
       className="h-full"
     >
       <Card 
-        className="h-full transition-all duration-500 overflow-hidden group bg-gradient-to-br from-black/60 to-black/80 backdrop-blur-lg border border-white/10 hover:border-white/20"
+        className="h-full transition-all duration-500 overflow-hidden group bg-gradient-to-br from-black/60 to-black/80 backdrop-blur-lg border border-white/10 hover:border-white/20 hover:shadow-xl hover:shadow-primary/10"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -97,13 +97,15 @@ const PortfolioItem = ({ project, index }: PortfolioItemProps) => {
           <p className="text-sm text-white/70 line-clamp-3">{project.description}</p>
         </CardContent>
         
-        <CardFooter className="px-5 pb-5 pt-0">
-          {project.link && (
+        <CardFooter className="px-5 pb-5 pt-0 flex justify-between items-center">
+          {project.link ? (
             <Button variant="outline" size="sm" className="border-white/10 hover:bg-white/10 text-white/80" asChild>
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 Подробнее <ExternalLink className="ml-2 h-3.5 w-3.5" />
               </a>
             </Button>
+          ) : (
+            <div className="text-xs text-white/40 italic">Проект в разработке</div>
           )}
         </CardFooter>
       </Card>
