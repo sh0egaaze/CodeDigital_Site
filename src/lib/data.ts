@@ -48,7 +48,7 @@ export const services: Service[] = [
     id: "website-development",
     title: "Разработка сайтов",
     description: "Создание современных и отзывчивых веб-сайтов для вашего бизнеса",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
     price: 50000,
     originalPrice: 65000,
     features: [
@@ -65,7 +65,7 @@ export const services: Service[] = [
     id: "telegram-bot",
     title: "Телеграм боты",
     description: "Разработка функциональных и интерактивных ботов для Telegram",
-    image: "https://images.unsplash.com/photo-1611746872915-64382b5c2a1c?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1661347561966-47fc7a60310d?auto=format&fit=crop&q=80&w=800",
     price: 30000,
     features: [
       "Интеграция с API",
@@ -80,7 +80,7 @@ export const services: Service[] = [
     id: "design-services",
     title: "Дизайн",
     description: "Создание уникального и современного дизайна для вашего проекта",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800",
     price: 25000,
     features: [
       "UI/UX дизайн",
@@ -95,7 +95,7 @@ export const services: Service[] = [
     id: "mini-app",
     title: "Mini Apps",
     description: "Разработка мини-приложений для платформ и мессенджеров",
-    image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1533750088811-7a89ca886479?auto=format&fit=crop&q=80&w=800",
     price: 40000,
     features: [
       "Интеграция с платформами",
@@ -170,7 +170,7 @@ export const testimonials: Testimonial[] = [
     name: "Александр Петров",
     company: "GourmetExpress",
     text: "CodeDigital превзошли все ожидания! Наш сервис доставки еды получил не только красивый и функциональный сайт, но и значительное увеличение конверсии. Клиенты отмечают удобство интерфейса и скорость работы.",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    avatar: "",
     rating: 5
   },
   {
@@ -178,7 +178,7 @@ export const testimonials: Testimonial[] = [
     name: "Елена Добрынина",
     company: "LOUVRE",
     text: "Мы искали команду, которая поможет реализовать современный, но в то же время классический дизайн для нашего музея. CodeDigital справились на отлично! Особенно впечатлила их способность сочетать инновации с традициями.",
-    avatar: "https://randomuser.me/api/portraits/women/63.jpg",
+    avatar: "",
     rating: 5
   },
   {
@@ -186,7 +186,7 @@ export const testimonials: Testimonial[] = [
     name: "Роман Викторов",
     company: "FinanceHelper",
     text: "Наш Telegram-бот для подбора финансовых продуктов работает безупречно и уже помог увеличить количество одобренных заявок на 40%. Техническая реализация на высшем уровне, а сопровождение выше всяких похвал!",
-    avatar: "https://randomuser.me/api/portraits/men/78.jpg",
+    avatar: "",
     rating: 5
   },
   {
@@ -194,7 +194,7 @@ export const testimonials: Testimonial[] = [
     name: "Ольга Шаблинская",
     company: "ШАББ",
     text: "Бот для нашей команды стал незаменимым инструментом. Организация задач и командных активностей теперь происходит в 3 раза быстрее, а геймификация добавила мотивации сотрудникам. Рекомендую CodeDigital!",
-    avatar: "https://randomuser.me/api/portraits/women/11.jpg",
+    avatar: "",
     rating: 5
   },
   {
@@ -202,7 +202,7 @@ export const testimonials: Testimonial[] = [
     name: "Мария Манукян",
     company: "Танцор и модель",
     text: "Моё портфолио выглядит именно так, как я мечтала. Элегантно, современно и полностью отражает мою индивидуальность. Каждая деталь проработана, а мобильная версия работает идеально. Спасибо команде CodeDigital!",
-    avatar: "https://randomuser.me/api/portraits/women/22.jpg",
+    avatar: "",
     rating: 5
   },
   {
@@ -210,7 +210,7 @@ export const testimonials: Testimonial[] = [
     name: "Сергей Тимофеев",
     company: "TechStore",
     text: "Интернет-магазин, разработанный CodeDigital, значительно увеличил наши продажи. Удобный интерфейс, быстрая работа и отличная оптимизация для поисковых систем. Продолжаем сотрудничество по развитию проекта!",
-    avatar: "https://randomuser.me/api/portraits/men/54.jpg",
+    avatar: "",
     rating: 5
   }
 ];

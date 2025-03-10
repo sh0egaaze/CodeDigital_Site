@@ -6,7 +6,16 @@ import {
   CardFooter, 
   CardHeader 
 } from "@/components/ui/card";
-import { Star, Quote } from "lucide-react";
+import { 
+  Star, 
+  Quote, 
+  User, 
+  UserRound, 
+  UserCircle, 
+  MessageCircle,
+  Heart,
+  MessageSquare
+} from "lucide-react";
 import { Testimonial } from "@/lib/data";
 
 interface TestimonialCardProps {
@@ -15,6 +24,19 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard = ({ testimonial, index }: TestimonialCardProps) => {
+  // Массив иконок для разнообразия
+  const userIcons = [
+    <UserRound className="h-full w-full p-1.5 text-primary" />,
+    <UserCircle className="h-full w-full p-1.5 text-primary" />,
+    <User className="h-full w-full p-1.5 text-primary" />,
+    <MessageCircle className="h-full w-full p-1.5 text-primary" />,
+    <Heart className="h-full w-full p-1.5 text-primary" />,
+    <MessageSquare className="h-full w-full p-1.5 text-primary" />
+  ];
+
+  // Выбираем иконку в зависимости от индекса отзыва
+  const UserIcon = userIcons[index % userIcons.length];
+
   return (
     <Card 
       className="glass-card h-full transition-all duration-300 hover:shadow-lg hover:border-primary/30 relative overflow-hidden group"
@@ -51,12 +73,8 @@ const TestimonialCard = ({ testimonial, index }: TestimonialCardProps) => {
       
       <CardFooter className="pt-2 border-t border-white/10">
         <div className="flex items-center space-x-3">
-          <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-primary/20">
-            <img 
-              src={testimonial.avatar} 
-              alt={testimonial.name}
-              className="h-full w-full object-cover"
-            />
+          <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-primary/20 bg-background/80 flex items-center justify-center">
+            {UserIcon}
           </div>
           <div>
             <p className="text-sm font-medium text-white">{testimonial.name}</p>
