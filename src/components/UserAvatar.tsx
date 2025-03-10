@@ -9,7 +9,7 @@ interface UserAvatarProps {
 }
 
 const UserAvatar: React.FC<UserAvatarProps> = ({ 
-  src = "/avatar.png", 
+  src = "/images/avatar.png", 
   fallback = "CD", 
   className 
 }) => {

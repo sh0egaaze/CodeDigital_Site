@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Profile = () => {
+  const avatarPath = "/images/avatar.png"; // Убедитесь, что этот файл существует в папке public/images/
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -12,7 +14,7 @@ const Profile = () => {
         <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
           <div className="flex flex-col items-center">
             <UserAvatar 
-              src="/images/avatar.png" 
+              src={avatarPath} 
               fallback="CD" 
               className="h-24 w-24"
             />
@@ -20,6 +22,14 @@ const Profile = () => {
             <p className="mt-2 text-gray-600">
               Здесь отображается ваша аватарка, загруженная локально
             </p>
+            <div className="mt-4 text-sm text-gray-500">
+              <p>Для использования своей аватарки:</p>
+              <ol className="list-decimal pl-5 mt-2">
+                <li>Поместите ваше изображение в папку public/images/</li>
+                <li>Назовите файл avatar.png</li>
+                <li>Или измените путь к файлу в коде</li>
+              </ol>
+            </div>
           </div>
         </div>
       </main>
