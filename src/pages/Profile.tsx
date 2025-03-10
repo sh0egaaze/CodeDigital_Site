@@ -1,8 +1,8 @@
 
 import React from "react";
 import UserAvatar from "@/components/UserAvatar";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Profile = () => {
   return (
