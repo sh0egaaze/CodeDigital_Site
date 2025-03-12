@@ -118,9 +118,9 @@ const Portfolio = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {[
-              { label: "Завершенных проектов", value: "50+", icon: <Award className="h-10 w-10 text-purple-400" /> },
-              { label: "Довольных клиентов", value: "30+", icon: <Users className="h-10 w-10 text-blue-400" /> },
-              { label: "Лет на рынке", value: "5+", icon: <Star className="h-10 w-10 text-amber-400" /> },
+              { label: "Завершенных проектов", value: "20+", icon: <Award className="h-10 w-10 text-purple-400" /> },
+              { label: "Довольных клиентов", value: "20+", icon: <Users className="h-10 w-10 text-blue-400" /> },
+              { label: "Лет на рынке", value: "3+", icon: <Star className="h-10 w-10 text-amber-400" /> },
               { label: "Рост бизнеса", value: "10x", icon: <TrendingUp className="h-10 w-10 text-green-400" /> }
             ].map((stat, index) => (
               <motion.div

@@ -26,7 +26,6 @@ export interface Testimonial {
   name: string;
   company: string;
   text: string;
-  avatar: string;
   rating: number;
 }
 
@@ -48,9 +47,9 @@ export const services: Service[] = [
     id: "website-development",
     title: "Разработка сайтов",
     description: "Создание современных и отзывчивых веб-сайтов для вашего бизнеса",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-    price: 50000,
-    originalPrice: 65000,
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+    price: 20000,
+    originalPrice: 30000,
     features: [
       "Адаптивный дизайн",
       "SEO оптимизация",
@@ -60,13 +59,31 @@ export const services: Service[] = [
     ],
     timeframe: "2-4 недели",
     badge: "Популярное"
+  }, 
+
+  {
+    id: "mini-app",
+    title: "Mini Apps",
+    description: "Разработка мини-приложений для платформ и мессенджеров",
+    image: "https://i.imgur.com/57tAZoo.jpeg",
+    price: 30000,
+    features: [
+      "Интеграция с платформами",
+      "Легкий вес",
+      "Быстрая загрузка",
+      "Функциональный интерфейс",
+      "Аналитика использования"
+    ],
+    timeframe: "2-3 недели",
+    badge: "Популярное"
   },
+
   {
     id: "telegram-bot",
     title: "Телеграм боты",
     description: "Разработка функциональных и интерактивных ботов для Telegram",
-    image: "https://images.unsplash.com/photo-1661347561966-47fc7a60310d?auto=format&fit=crop&q=80&w=800",
-    price: 30000,
+    image: "https://i.pinimg.com/736x/81/5a/79/815a7960cf85d673b12af945a8ca88ce.jpg",
+    price: 10000,
     features: [
       "Интеграция с API",
       "Обработка сообщений",
@@ -81,7 +98,7 @@ export const services: Service[] = [
     title: "Дизайн",
     description: "Создание уникального и современного дизайна для вашего проекта",
     image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800",
-    price: 25000,
+    price: 10000,
     features: [
       "UI/UX дизайн",
       "Брендинг",
@@ -91,126 +108,87 @@ export const services: Service[] = [
     ],
     timeframe: "1-3 недели"
   },
-  {
-    id: "mini-app",
-    title: "Mini Apps",
-    description: "Разработка мини-приложений для платформ и мессенджеров",
-    image: "https://images.unsplash.com/photo-1533750088811-7a89ca886479?auto=format&fit=crop&q=80&w=800",
-    price: 40000,
-    features: [
-      "Интеграция с платформами",
-      "Легкий вес",
-      "Быстрая загрузка",
-      "Функциональный интерфейс",
-      "Аналитика использования"
-    ],
-    timeframe: "2-3 недели",
-    badge: "Новое"
-  }
 ];
 
 export const portfolioProjects: PortfolioProject[] = [
   {
-    id: "project-food-delivery",
-    title: "Сервис доставки еды",
-    description: "Разработка веб-сайта для премиального сервиса доставки ресторанной еды. Интеграция с платежными системами и CRM рестораторов.",
-    image: "/lovable-uploads/57f9f69e-aa8e-45ab-b818-e10e309381ad.png",
-    client: "GourmetExpress",
-    tags: ["Веб-разработка", "eCommerce", "UI/UX"],
-    link: "#"
-  },
-  {
-    id: "project-museum",
-    title: "Сайт музея искусств",
-    description: "Редизайн и разработка современного веб-сайта для музея древнего искусства с виртуальными турами и каталогом экспонатов.",
-    image: "/lovable-uploads/212fd1ff-15e3-42eb-99b8-2ed9cf5fa14d.png",
-    client: "LOUVRE",
-    tags: ["Дизайн", "Веб-разработка", "Культура"],
-    link: "#"
-  },
-  {
-    id: "project-fintech-bot",
-    title: "Telegram бот для финтех сервиса",
-    description: "Разработка функционального Telegram бота для подбора банковских карт и кредитных предложений с персонализированными рекомендациями.",
-    image: "/lovable-uploads/713437c2-183b-43da-8a54-655cc0f7e78b.png",
-    client: "FinanceHelper",
-    tags: ["Telegram Бот", "Финтех", "API"]
-  },
-  {
-    id: "project-task-bot",
-    title: "Корпоративный бот для команд",
-    description: "Создание бота для управления командными задачами и организации корпоративных мероприятий с геймификацией.",
-    image: "/lovable-uploads/d9578d25-667c-426e-9bb2-95c2ee015647.png",
-    client: "ШАББ",
-    tags: ["Telegram Бот", "Команды", "Геймификация"]
-  },
-  {
-    id: "project-portfolio",
-    title: "Персональный сайт-портфолио",
-    description: "Разработка элегантного персонального сайта-портфолио для модели и танцора с возможностью ведения блога и формой обратной связи.",
-    image: "/lovable-uploads/3b817792-1e30-47aa-a9cd-f99d030c4e22.png",
-    client: "Мария Манукян",
-    tags: ["Веб-разработка", "Портфолио", "Персональный бренд"],
-    link: "#"
-  },
-  {
     id: "project-1",
-    title: "Интернет-магазин электроники",
-    description: "Разработка современного e-commerce сайта с интеграцией платежных систем и управлением складом",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800",
-    client: "TechStore",
-    tags: ["Веб-разработка", "eCommerce", "React"],
-    link: "#"
+    title: "Персональный сайт артиста",
+    description: "Разработка стильного персонального сайта для танцора и вокалистки Марии Манукян с адаптивным дизайном и удобной навигацией",
+    image: "public/lovable-uploads/3b817792-1e30-47aa-a9cd-f99d030c4e22.png",
+    client: "Мария Манукян",
+    tags: ["Веб-разработка", "Дизайн", "Лендинг"],
+    link: "https://maria-manukyan-site.vercel.app"
+  },
+  {
+    id: "project-2",
+    title: "Сервис доставки еды",
+    description: "Создание современного сайта для доставки ресторанной еды с возможностью онлайн-заказа и интеграцией Telegram авторизации",
+    image: "public/lovable-uploads/57f9f69e-aa8e-45ab-b818-e10e309381ad.png",
+    client: "Exquisite Cuisine",
+    tags: ["Веб-разработка", "eCommerce", "UI/UX"]
+  },
+  {
+    id: "project-3",
+    title: "Telegram бот для команды",
+    description: "Разработка функционального Telegram бота для управления командными задачами и организации мероприятий с уведомлениями",
+    image: "public/lovable-uploads/d9578d25-667c-426e-9bb2-95c2ee015647.png",
+    client: "ШАББ",
+    tags: ["Телеграм Бот", "API", "NodeJS"],
+    link: "https://t.me/SHABBhub_bot"
+  },
+  {
+    id: "project-4",
+    title: "Сайт художественного музея",
+    description: "Дизайн и разработка элегантного веб-сайта для музея с каталогом экспонатов и виртуальными турами по коллекциям",
+    image: "public/lovable-uploads/212fd1ff-15e3-42eb-99b8-2ed9cf5fa14d.png",
+    client: "Museum of Ancient Art",
+    tags: ["Веб-разработка", "Дизайн", "UI/UX"]
+  },
+  {
+    id: "project-5",
+    title: "Telegram Mini App для финансов",
+    description: "Разработка Telegram Mini App для выбора и оформления кредитных карт с интеграцией API банков и системой уведомлений",
+    image: "public/lovable-uploads/713437c2-183b-43da-8a54-655cc0f7e78b.png",
+    client: "FinTech Solutions",
+    tags: ["Mini App", "Telegram", "API"]
   }
 ];
 
 export const testimonials: Testimonial[] = [
   {
     id: "testimonial-1",
-    name: "Александр Петров",
-    company: "GourmetExpress",
-    text: "CodeDigital превзошли все ожидания! Наш сервис доставки еды получил не только красивый и функциональный сайт, но и значительное увеличение конверсии. Клиенты отмечают удобство интерфейса и скорость работы.",
-    avatar: "",
+    name: "Мария Манукян",
+    company: "Артист",
+    text: "Я в полном восторге от своего сайта! Ребята из CodeDigital сделали всё просто идеально — сайт получился стильным, удобным и именно таким, как я хотела. Теперь я могу легко делиться своим творчеством, и всё работает просто отлично. Спасибо им огромное!",
     rating: 5
   },
   {
     id: "testimonial-2",
-    name: "Елена Добрынина",
-    company: "LOUVRE",
-    text: "Мы искали команду, которая поможет реализовать современный, но в то же время классический дизайн для нашего музея. CodeDigital справились на отлично! Особенно впечатлила их способность сочетать инновации с традициями.",
-    avatar: "",
+    name: "Александр Васильев",
+    company: "Exquisite Cuisine",
+    text: "Наш сервис доставки еды теперь просто огонь! Сделали новый сайт. Людям понравилось, клиентов стало больше. А команда CodeDigital — молодцы, всё сделали чётко и без заморочек",
     rating: 5
   },
   {
     id: "testimonial-3",
-    name: "Роман Викторов",
-    company: "FinanceHelper",
-    text: "Наш Telegram-бот для подбора финансовых продуктов работает безупречно и уже помог увеличить количество одобренных заявок на 40%. Техническая реализация на высшем уровне, а сопровождение выше всяких похвал!",
-    avatar: "",
-    rating: 5
+    name: "Игорь Соколов",
+    company: "ШАББ",
+    text: "Наш Telegram-бот — просто находка! Он сильно упростил работу: уведомления приходят вовремя, разобраться в нём может любой. Ребята из CodeDigital сделали всё круто, советую их всем, кто хочет что-то подобное! ",
+    rating: 4
   },
   {
     id: "testimonial-4",
-    name: "Ольга Шаблинская",
-    company: "ШАББ",
-    text: "Бот для нашей команды стал незаменимым инструментом. Организация задач и командных активностей теперь происходит в 3 раза быстрее, а геймификация добавила мотивации сотрудникам. Рекомендую CodeDigital!",
-    avatar: "",
+    name: "Екатерина Орлова",
+    company: "Museum of Ancient Art",
+    text: "Сайт для нашего музея получился просто шикарно! Дизайн красивый, всё подчеркивает наши экспонаты, а виртуальные туры — это вообще восторг. Спасибо CodeDigital за то, что помогли нам шагнуть в цифровую эпоху!",
     rating: 5
   },
   {
     id: "testimonial-5",
-    name: "Мария Манукян",
-    company: "Танцор и модель",
-    text: "Моё портфолио выглядит именно так, как я мечтала. Элегантно, современно и полностью отражает мою индивидуальность. Каждая деталь проработана, а мобильная версия работает идеально. Спасибо команде CodeDigital!",
-    avatar: "",
-    rating: 5
-  },
-  {
-    id: "testimonial-6",
-    name: "Сергей Тимофеев",
-    company: "TechStore",
-    text: "Интернет-магазин, разработанный CodeDigital, значительно увеличил наши продажи. Удобный интерфейс, быстрая работа и отличная оптимизация для поисковых систем. Продолжаем сотрудничество по развитию проекта!",
-    avatar: "",
+    name: "Дмитрий Морозов",
+    company: "FinTech Solutions",
+    text: "Сделать Telegram Mini App для финансов было непросто, но CodeDigital справились на отлично! Приложение работает быстро, всё хорошо связано с банками, и пользователям всё нравится. Ребята — молодцы!",
     rating: 5
   }
 ];
@@ -218,36 +196,31 @@ export const testimonials: Testimonial[] = [
 export const teamMembers: TeamMember[] = [
   {
     id: "team-1",
-    name: "Александр Иванов",
-    role: "CEO / Основатель",
-    bio: "Александр основал CodeDigital с целью помогать бизнесам успешно реализовывать цифровую трансформацию. Имеет более 10 лет опыта в IT-индустрии.",
-    image: "https://randomuser.me/api/portraits/men/11.jpg",
+    name: "Загарий Денис",
+    role: "CEO / Разработчик",
+    bio: "Денис один из основателей CodeDigital с целью помогать бизнесам успешно реализовывать цифровую трансформацию. Имеет более 3-х лет опыта в IT-индустрии.",
+    image: "/lovable-uploads/2025-03-10 23.13.57.jpg",
     social: {
-      twitter: "#",
-      linkedin: "#",
-      github: "#"
+      twitter: "https://www.instagram.com/cvv_kkll?igsh=MXcxeHUzY2ttdmx0aw%3D%3D&utm_source=qr",
+      github: "https://github.com/getshhh"
     }
   },
   {
     id: "team-2",
-    name: "Екатерина Смирнова",
-    role: "Ведущий дизайнер",
-    bio: "Екатерина отвечает за визуальную составляющую всех проектов. Её работы отличаются креативностью и вниманием к деталям.",
-    image: "https://randomuser.me/api/portraits/women/12.jpg",
+    name: "Комиссаров Кирилл",
+    role: "CEO / Ведущий дизайнер / Разработчик",
+    bio: "Кирилл отвечает за визуальную составляющую всех проектов. Его работы отличаются креативностью и вниманием к деталям.",
+    image: "/lovable-uploads/2025-03-10 23.14.35.jpg",
     social: {
-      twitter: "#",
-      linkedin: "#"
     }
   },
   {
     id: "team-3",
-    name: "Михаил Петров",
-    role: "Главный разработчик",
-    bio: "Михаил специализируется на создании высокопроизводительных и масштабируемых веб-приложений. Эксперт в современных фреймворках и технологиях.",
-    image: "https://randomuser.me/api/portraits/men/13.jpg",
+    name: "Соколов Арсений",
+    role: "CEO / Главный разработчик",
+    bio: "Арсений специализируется на создании высокопроизводительных и масштабируемых веб-приложений. Эксперт в современных фреймворках и технологиях.",
+    image: "/lovable-uploads/2025-03-10 23.14.20.jpg",
     social: {
-      github: "#",
-      linkedin: "#"
     }
   },
   {
@@ -255,9 +228,9 @@ export const teamMembers: TeamMember[] = [
     name: "Анна Козлова",
     role: "Менеджер проектов",
     bio: "Анна обеспечивает своевременную и качественную реализацию всех проектов. Имеет сертификаты по управлению проектами и agile-методологиям.",
-    image: "https://randomuser.me/api/portraits/women/14.jpg",
+    image: "https://cdn-icons-png.freepik.com/512/15675/15675951.png?ga=GA1.1.1624693863.1740912206",
     social: {
-      linkedin: "#"
+
     }
   }
 ];

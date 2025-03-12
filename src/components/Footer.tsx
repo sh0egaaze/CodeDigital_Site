@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Github, Instagram, Linkedin, Send, Phone } from "lucide-react";
+import { Github, Instagram, Linkedin, Send, Mail } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 const Footer = () => {
@@ -11,24 +11,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link to="/" className="inline-block mb-4 flex items-center gap-2">
-              <img src="/logo.png" alt="CodeDigital Logo" className="h-8 w-auto" />
+              <img src="/lovable-uploads/e8e59abd-7e66-47f0-a944-f054b36fcd4c.png" alt="CodeDigital Logo" className="h-8 w-auto" />
               <h3 className="text-xl font-bold text-gradient">CodeDigital</h3>
             </Link>
             <p className="text-white/70 mb-4 max-w-xs">
               Команда профессионалов, которая воплощает ваши идеи в цифровую реальность
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white/60 hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/codedigital_it?igsh=azU1bHBndXV5dXZw&utm_source=qr" className="text-white/60 hover:text-primary transition-colors">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
-              </a>
-              <a href="#" className="text-white/60 hover:text-primary transition-colors">
-                <Github className="h-5 w-5" />
-                <span className="sr-only">Github</span>
-              </a>
-              <a href="#" className="text-white/60 hover:text-primary transition-colors">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
               </a>
             </div>
           </div>
@@ -95,9 +87,9 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-center text-white/70">
-                <Phone className="h-4 w-4 mr-2" />
-                <a href="tel:+79001234567" className="hover:text-primary transition-colors">
-                  +7 (900) 123-45-67
+                <Mail className="h-4 w-4 mr-2" />
+                <a href="mail:codedigital@gmail.com" className="hover:text-primary transition-colors">
+                codedigital@gmail.com
                 </a>
               </li>
             </ul>

@@ -190,7 +190,7 @@ const Index = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/5 rounded-3xl -z-10" />
               <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800"
+                src="https://i.pinimg.com/736x/e0/70/a0/e070a0fe5560532153a7bb51dd53a685.jpg"
                 alt="Команда за работой"
                 className="rounded-2xl shadow-xl"
               />

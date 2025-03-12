@@ -65,7 +65,7 @@ const About = () => {
             >
               <div className="absolute -inset-4 bg-primary/5 rounded-3xl -z-10" />
               <img 
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800"
+                src="https://i.pinimg.com/736x/8f/aa/59/8faa59c403fca53b660e1e94f3fe5396.jpg"
                 alt="Команда CodeDigital"
                 className="rounded-2xl shadow-xl"
               />

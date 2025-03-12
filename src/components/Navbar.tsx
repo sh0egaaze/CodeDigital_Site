@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -46,7 +45,7 @@ const Navbar = () => {
             className="flex items-center gap-2 font-bold text-xl group"
           >
             <div className="relative overflow-hidden rounded-md">
-              <img src="/logo.png" alt="CodeDigital Logo" className="h-8 w-auto relative z-10 group-hover:scale-110 transition-transform duration-300" />
+              <img src="/lovable-uploads/e8e59abd-7e66-47f0-a944-f054b36fcd4c.png" alt="CodeDigital Logo" className="h-8 w-auto relative z-10 group-hover:scale-110 transition-transform duration-300" />
               <div className="absolute inset-0 bg-primary/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div className="flex items-center">
